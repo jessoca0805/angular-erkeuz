@@ -1,0 +1,30 @@
+<ol>
+  <li>
+    <mat-form-field>
+      <mat-label>What's your name?</mat-label>
+      <input matInput [(ngModel)]="name" />
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+  <li *ngIf="animal">You chose: <i>{{animal}}</i></li>
+</ol>
+<ng-container>
+  <div>
+    <div>
+      <mat-form-field>
+        <mat-label>Favorite Animal</mat-label>
+        <mat-select [(ngModel)]="animal" placeholder="Favorite Animal">
+          <mat-option *ngFor="let option of animalOptions" [value]="option"
+            >{{ option }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

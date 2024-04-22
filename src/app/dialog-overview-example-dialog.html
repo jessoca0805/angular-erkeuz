@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Hi {{ data.name }}</h1>
+<form [formGroup]="animalForm">
+  <div mat-dialog-content>
+    <p>What's your favorite animal?</p>
+    <mat-form-field>
+      <mat-label>Favorite Animal</mat-label>
+      <mat-select formControlName="animal">
+        <mat-option *ngFor="let option of animalOptions" [value]="option">{{ option }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button  (click)="submit()">Ok</button>
+  </div>
+</form>
+
+<!-- 外层显示用户输入的动物名称 -->
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
